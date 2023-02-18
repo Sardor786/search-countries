@@ -1,0 +1,41 @@
+.countries_list {
+	&-item {
+		padding: 10px;
+	}
+	&-header {
+		display: flex;
+		align-items: flex-start;
+	}
+	&-emoji {
+		span {
+			font-size: 52px;
+		}
+	}
+	&-names {
+		margin-right: auto;
+		margin-left: 20px;
+		p {
+			margin: 5px 0;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	&-continent {
+		p {
+			margin: 0;
+		}
+	}
+
+	&-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-languages {
+		span {
+			margin-left: 5px;
+		}
+	}
+}
