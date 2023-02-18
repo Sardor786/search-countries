@@ -2,8 +2,10 @@ import React from "react";
 import Card from "@mui/material/Card";
 
 export default function CountriesList({ countries = [], loading }) {
+	// if countries searching
 	if (loading) return <h2 className="text-center">Loading...</h2>;
 
+	// countries list
 	return (
 		<div className="countries_list">
 			{countries.length > 0 ? (
@@ -29,7 +31,7 @@ export default function CountriesList({ countries = [], loading }) {
 								</div>
 								<div className="countries_list-footer">
 									<p>📞 +{country.phone}</p>
-									<p>💱 {country.code}</p>
+									<p>💱 {country.currency}</p>
 									<div className="countries_list-languages">
 										<span>🗣</span>
 										{country.languages.map((lang) => {
@@ -46,6 +48,7 @@ export default function CountriesList({ countries = [], loading }) {
 					);
 				})
 			) : (
+				// if empty
 				<p className="text-center">Empty</p>
 			)}
 		</div>

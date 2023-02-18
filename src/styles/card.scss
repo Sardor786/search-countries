@@ -30,12 +30,22 @@
 	&-footer {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		p {
+			margin-right: 10px;
+		}
 	}
 
 	&-languages {
+		margin-left: auto;
 		span {
 			margin-left: 5px;
 		}
+	}
+
+	span,
+	p {
+		white-space: nowrap;
+		overflow: hidden;
 	}
 }

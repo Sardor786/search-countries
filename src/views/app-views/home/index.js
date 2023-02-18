@@ -1,10 +1,13 @@
 import React from "react";
 import { OutlinedInput } from "@mui/material";
-import CountriesList from "./components/CountriesList";
 import { useQuery } from "@apollo/client";
+
 import { SEARCH_COUNTRY } from "../../queries/search";
 import { debounce } from "../../helpers/debounce";
 import { useFilter } from "../context/homeContext";
+import { transliterate } from "../../helpers/transliterate";
+
+import CountriesList from "./components/CountriesList";
 
 export default function Home() {
 	const [filter, setFilter] = useFilter();
@@ -14,6 +17,7 @@ export default function Home() {
 	});
 
 	const changeCode = (value) => {
+		value = transliterate(value);
 		debounce(
 			() => setFilter({ ...filter, countryCode: value.toUpperCase() }),
 			"changeCode",

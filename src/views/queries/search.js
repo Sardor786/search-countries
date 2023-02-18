@@ -12,15 +12,11 @@ const SEARCH_COUNTRY = gql`
 			languages {
 				name
 				native
-				rtl
 			}
 			continent {
 				name
 			}
 			emoji
-			states {
-				name
-			}
 		}
 	}
 `;
