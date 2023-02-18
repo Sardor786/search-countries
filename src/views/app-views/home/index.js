@@ -1,5 +1,4 @@
 import React from "react";
-import { OutlinedInput } from "@mui/material";
 import { useQuery } from "@apollo/client";
 
 import { SEARCH_COUNTRY } from "../../queries/search";
@@ -8,6 +7,7 @@ import { useFilter } from "../context/homeContext";
 import { transliterate } from "../../helpers/transliterate";
 
 import CountriesList from "./components/CountriesList";
+import SearchInput from "./components/SearchInput";
 
 export default function Home() {
 	const [filter, setFilter] = useFilter();
@@ -30,14 +30,7 @@ export default function Home() {
 			<div className="container">
 				<h1 className="text-center">Search Countries</h1>
 
-				<OutlinedInput
-					color="primary"
-					className="mb-1 w-100"
-					placeholder="Search country with code..."
-					defaultValue={"uz"}
-					onChange={(e) => changeCode(e.target.value.trim())}
-				/>
-
+				<SearchInput onChange={changeCode} />
 				<CountriesList
 					loading={loading}
 					countries={data ? data.countries : []}
