@@ -36,6 +36,13 @@ export default function Home() {
 					countries={data ? data.countries : []}
 				/>
 			</div>
+
+			<div className="link">
+				by{" "}
+				<a target={"blank"} href="https://t.me/sardor_shodmonov">
+					Sardor Shodmonov
+				</a>
+			</div>
 		</div>
 	);
 }
